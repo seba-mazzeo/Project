@@ -65,7 +65,7 @@ class NewVisitorTest(LiveServerTestCase):
         # Edith wonders wether the site will remember her list. Then she sees
         # that the site has generated a unique URL for her -- there is some
         # explanatory text to that efect
-        # self.fail('Finish the test!')
+        self.fail('Finish the test!')
         # She visits that URL -her to-do list is still there
         
         # The page updates again, and now shows both items on her list
@@ -113,7 +113,7 @@ class NewVisitorTest(LiveServerTestCase):
 
         # Again, thereis no trace of Edith's list
         page_text = self.browser.find_element_by_tag_name('body').text
-        self.assertNtoIn('Buy peacock feathers', page_text)
+        self.assertNotIn('Buy peacock feathers', page_text)
         self.assertIn('Buy milk', page_text)
 
         # Satisfed, they both go back to sleep
